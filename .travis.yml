@@ -1,0 +1,9 @@
+language: python
+install:
+  - pip install tox 
+script:
+  - tox
+env:
+  - TOXENV=py27-django111
+  - TOXENV=py36-django111
+  - TOXENV=py36-django20

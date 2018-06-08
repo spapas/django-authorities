@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+<ul>
 {% for a in authorities %}
-    {{ a }}
+    <li>{{ a }} <a href='{% url "authority_update" a.id %}'>Edit</a></li>
 {% endfor %}
+</ul>
 {% endblock %}

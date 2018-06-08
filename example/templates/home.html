@@ -1,5 +1,6 @@
+{% extends "base.html" %}
 {% load authorities_tags %}
-1
 
-{% user_authorities %}
-2
+{% block content %}
+<a href='{% url "authority_list" %}'>Authorities list</a>
+{% endblock %}

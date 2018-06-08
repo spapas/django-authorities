@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Authority
 
-# Create your views here.
+class AuthorityListView(ListView):
+    model = Authority
+    context_object_name = 'authorities'

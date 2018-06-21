@@ -25,7 +25,6 @@ class Authority(NamedModel):
     kind = models.ForeignKey('AuthorityKind' , verbose_name= _('Kind',), on_delete=models.PROTECT )
     is_active = models.BooleanField(default=True, help_text=_('Unselect this if the authority is not active any more'))
     parent = models.ForeignKey('self' , verbose_name= _('Parent',), on_delete=models.PROTECT, blank=True, null=True, )
-    # The M2M is not really needed - I'm adding it to use it instead of adding a user *Profile* object.
     users = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name=_('Authority users'), related_name='authorities', blank=True)
 
     def get_absolute_url(self):

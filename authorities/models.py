@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 class NamedModel(models.Model):
     name = models.CharField(max_length=255, verbose_name='Όνομα', unique=True )
     code = models.CharField(max_length=32, blank=True, null=True, help_text=_('Optional field to add an organization-specific code in addition to the name'))
-    
 
     def __str__(self):
         return '{0}: {1}'.format(self.id, self.name)
@@ -29,11 +28,9 @@ class Authority(NamedModel):
     # The M2M is not really needed - I'm adding it to use it instead of adding a user *Profile* object.
     users = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name=_('Authority users'), related_name='authorities', blank=True)
 
-    
     def get_absolute_url(self):
         return reverse('authority_view', args=[str(self.id)])
-        
-    
+
     class Meta:
         verbose_name = _('Authority')
         verbose_name_plural = _('Authorities')

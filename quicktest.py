@@ -44,29 +44,26 @@ class QuickDjangoTest(object):
             },
             'INSTALLED_APPS':self.INSTALLED_APPS + self.apps,
             'STATIC_URL':'/static/',
-            'ROOT_URLCONF':'generic_scaffold.tests',
+            'ROOT_URLCONF':'authorities.urls',
             'SILENCED_SYSTEM_CHECKS':['1_7.W001']
         }
 
-        if django.VERSION >= (1, 8, 0):
-            django_settings['TEMPLATES'] = [{
-                    'BACKEND': 'django.template.backends.django.DjangoTemplates',
-                    'APP_DIRS': True,
-                    'OPTIONS': {
-                        'context_processors': [
-                            'django.template.context_processors.debug',
-                            'django.template.context_processors.request',
-                            'django.contrib.auth.context_processors.auth',
-                            'django.contrib.messages.context_processors.messages',
-                        ],
-                    },
-                }]
+        django_settings['TEMPLATES'] = [{
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        }]
 
         settings.configure(**django_settings)
 
-        if django.VERSION >= (1, 7, 0):
-            # see: https://docs.djangoproject.com/en/dev/releases/1.7/#standalone-scripts
-            django.setup()
+        django.setup()
 
         from django.test.runner import DiscoverRunner as Runner
 
@@ -75,4 +72,4 @@ class QuickDjangoTest(object):
             sys.exit(failures)
 
 if __name__ == '__main__':
-    QuickDjangoTest(apps=['generic_scaffold'], db='sqlite3')
+    QuickDjangoTest(apps=['authorities'], db='sqlite3')

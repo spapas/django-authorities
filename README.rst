@@ -2,7 +2,23 @@
 django-authorities
 ==================
 
-An application for managing your organization's authorities (departments, directorates etc)
+An application for managing your organization's authorities (departments, directorates etc). This is an app built to mainly cover the needs of the organization I work for (a public sector organization in Greece); however feel free to use it if you like it.
+
+Rationale
+=========
+
+This more or less is a *better* ``auth.Group`` to help you building the hierarchy of an organization. Why not just use ``auth.Group``? Well, unfortunately, ``auth.Group`` is missing various needed things like:
+
+* ``category``: You may have departments, teams, directoratates
+* ``active``: Some authorities are de-activated; they should not be deleted though
+* ``parent``: You'll need to have a proper authority hierarchy
+
+Now, there are *more* things that may be useful for an authority, like
+
+* ``manager``: Who manages the authority
+* ``user-job``: The users of an authority may have different jobs like manager (this is complementary to the first one), teller, client development etc
+
+I haven't added these fields yet because I don't need them for my projects. If the need arises I'll add them.
 
 Installation
 ============

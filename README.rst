@@ -47,21 +47,21 @@ to provide a ``content`` block.
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:
 
-```
+.. code::
 
-{% if user.is_authenticated %}
-    {% user_authorities as my_authorities %}
-    {% if my_authorities %}
-        My authorities are: 
-        <ul>
-        {% for a in my_authorities  %}
-            <li>{{ a.name }}</li>
-        {% endfor %}
-        </ul>
+    {% if user.is_authenticated %}
+        {% user_authorities as my_authorities %}
+        {% if my_authorities %}
+            My authorities are: 
+            <ul>
+            {% for a in my_authorities  %}
+                <li>{{ a.name }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
     {% endif %}
-{% endif %}
 
-```
+
 
 
 v.0.1.2

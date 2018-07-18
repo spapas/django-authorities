@@ -3,4 +3,16 @@
 
 {% block content %}
 <a href='{% url "authority_list" %}'>Authorities list</a>
+
+{% if user.is_authenticated %}
+    {% user_authorities as my_authorities %}
+    {% if my_authorities %}
+        My authorities are: 
+        <ul>
+        {% for a in my_authorities  %}
+            <li>{{ a.name }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}
 {% endblock %}

@@ -48,15 +48,19 @@ To use the provided template tag, you need to ``{% load authorities_tags %}`` an
 like this in your template:
 
 ```
-{% user_authorities as my_authorities %}
-{% if my_authorities %}
-    My authorities are: 
-    <ul>
-    {% for a in my_authorities  %}
-        <li>{{ a.name }}</li>
-    {% endfor %}
-    </ul>
+
+{% if user.is_authenticated %}
+    {% user_authorities as my_authorities %}
+    {% if my_authorities %}
+        My authorities are: 
+        <ul>
+        {% for a in my_authorities  %}
+            <li>{{ a.name }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 {% endif %}
+
 ```
 
 

@@ -44,6 +44,21 @@ as they are or modify. Either inherit from them, put them in your own urls.py or
 whole ``authorities.urls``. The templates of these views inherit from a ``base.html`` which needs 
 to provide a ``content`` block.
 
+To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
+like this in your template:
+
+```
+{% user_authorities as my_authorities %}
+{% if my_authorities %}
+    My authorities are: 
+    <ul>
+    {% for a in my_authorities  %}
+        <li>{{ a.name }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+```
+
 
 v.0.1.2
 -------

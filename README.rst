@@ -13,9 +13,9 @@ This more or less is a *better* ``auth.Group`` to help you building the hierarch
 * ``active``: Some authorities are de-activated; they should not be deleted though
 * ``parent``: You'll need to have a proper authority hierarchy
 
-Also, for me the django ``auth.Group`` entity feels more like a system-related concept (vs an application related concept). I.e you can have a django auth group of "Administrators" or "Advanced users"; these people may belong to various directorates; not all people in the "IT department" need to be Administrators of the application.
+Also, for me the django ``auth.Group`` entity feels more like an application/system-related concept (vs the HR Authority provided in this add-on). I.e you can have a django auth group of "Administrators" or "Advanced users" or "Moderators" etc; these people may belong to various directorates; not all people in the "IT department" need to be Administrators of the application.
 
-Now, there are *more* things that may be useful for an authority, like
+Now, there are *more* things that may be useful for an authority/HR system, like
 
 * ``manager``: Who manages the authority
 * ``user-job``: The users of an authority may have different jobs like manager (this is complementary to the first one), teller, client development etc

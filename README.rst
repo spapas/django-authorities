@@ -13,6 +13,8 @@ This more or less is a *better* ``auth.Group`` to help you building the hierarch
 * ``active``: Some authorities are de-activated; they should not be deleted though
 * ``parent``: You'll need to have a proper authority hierarchy
 
+Also, for me the django ``auth.Group`` entity feels more like a system-related concept (vs an application related concept). I.e you can have a django auth group of "Administrators" or "Advanced users"; these people may belong to various directorates; not all people in the "IT department" need to be Administrators of the application.
+
 Now, there are *more* things that may be useful for an authority, like
 
 * ``manager``: Who manages the authority
@@ -32,17 +34,17 @@ Simple usage
 
 This is a very simple app with two models and a couple of views for editing these.
 
-After you've installed it, you can visit the django admin to edit ``authorities.Authority``s and
-``authorities.AuthorityKind``s. ``AuthorityKind`` only has a name (so it can be directorate, department
+After you've installed it, you can visit the django admin to edit ``authorities.Authority`` and
+``authorities.AuthorityKind``. ``AuthorityKind`` only has a name (so it can be directorate, department
 team etc) while ``Authority`` has ``kind`` (``AuthorityKind``), ``is_active`` (boolean), ``parent`` 
 (an optional FK to another ``Authority`` to create hierarchies) and ``users`` (an M2M relation with 
 ``settings.AUTH_USER_MODEL``; each user can belong to multiple authorities and each authority will
 have more than one user).
 
 Also I've included a couple of non-admin views which you can use
-as they are or modify. Either inherit from them, put them in your own urls.py or ``include`` the
+as they are or modify them to fit your needs. Either inherit from or and them in your own urls.py as they are or ``include`` the
 whole ``authorities.urls``. The templates of these views inherit from a ``base.html`` which needs 
-to provide a ``content`` block.
+to provide a ``content`` block. 
 
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:

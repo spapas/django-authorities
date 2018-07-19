@@ -46,6 +46,16 @@ as they are or modify them to fit your needs. Either inherit from or and them in
 whole ``authorities.urls``. The templates of these views inherit from a ``base.html`` which needs 
 to provide a ``content`` block. 
 
+These views are:
+
+- authorities.views.AuthorityListView
+- authorities.views.AuthorityCreateView
+- authorities.views.AuthorityUpdateView
+- authorities.views.AuthorityDetailView
+- authorities.views.AuthorityEditUsersView
+
+The names are self-explanatory; notice that the Create and Update views do not allow you to edit the users of that authority; you must use the ``AuthorityEditUsersView`` for that.
+
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:
 

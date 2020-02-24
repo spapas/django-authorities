@@ -44,7 +44,18 @@ have more than one user).
 Also I've included a couple of non-admin views which you can use
 as they are or modify them to fit your needs. Either inherit from or and them in your own urls.py as they are or ``include`` the
 whole ``authorities.urls``. The templates of these views inherit from a ``base.html`` which needs 
-to provide a ``content`` block. 
+to provide a ``content`` and a ``{% page_title %}`` block. Thus your ``base.html`` template could be like this:
+
+
+.. code::
+
+<html>
+    <body>
+        <h1>{% block page_title %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>
+
 
 These views are:
 
@@ -55,6 +66,8 @@ These views are:
 - authorities.views.AuthorityEditUsersView
 
 The names are self-explanatory; notice that the Create and Update views do not allow you to edit the users of that authority; you must use the ``AuthorityEditUsersView`` for that.
+
+To improve security a bit I'm checking that the user can add an authority in the urls.py before allowing access to these views.
 
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:
@@ -74,6 +87,12 @@ like this in your template:
     {% endif %}
 
 
+v.0.2.0
+-------
+
+- Add greek translations
+- Improve standard views a bit
+- Add some security to the builtin views
 
 
 v.0.1.2

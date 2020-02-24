@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-24 13:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\authorities\forms.py:8
+msgid "Select users"
+msgstr "Επιλέξατε χρήστες"
+
+#: .\authorities\models.py:8
+msgid "Name"
+msgstr "Όνομα"
+
+#: .\authorities\models.py:9
+msgid ""
+"Optional field to add an organization-specific code in addition to the name"
+msgstr "Προαιρετικό πεδίο για την προσθήκη ενός κωδικού επιπλέον του ονόματος"
+
+#: .\authorities\models.py:20
+msgid "Authority Kind"
+msgstr "Είδος υπηρεσίας"
+
+#: .\authorities\models.py:21
+msgid "Authority Kinds"
+msgstr "Είδη υπηρεσιών"
+
+#: .\authorities\models.py:25
+msgid "Kind"
+msgstr "Είδος"
+
+#: .\authorities\models.py:26
+msgid "Unselect this if the authority is not active any more"
+msgstr "Αποεπιλέξατε αν η υπηρεσία δεν είναι ενεργή"
+
+#: .\authorities\models.py:27
+msgid "Parent"
+msgstr "Πατέρας"
+
+#: .\authorities\models.py:28
+msgid "Authority users"
+msgstr "Χρήστες υπηρεσίας"
+
+#: .\authorities\models.py:34
+msgid "Authority"
+msgstr "Υπηρεσία"
+
+#: .\authorities\models.py:35
+msgid "Authorities"
+msgstr "Υπηρεσίες"
+
+#: .\authorities\templates\authorities\authority_detail.html:4
+msgid "Authority detail"
+msgstr "Στοιχεία υπηρεσίας"
+
+#: .\authorities\templates\authorities\authority_detail.html:8
+msgid "Users"
+msgstr "Χρήστες"
+
+#: .\authorities\templates\authorities\authority_detail.html:12
+msgid "No users"
+msgstr "Δεν υπάρχουν"
+
+#: .\authorities\templates\authorities\authority_form.html:4
+msgid "Authority form"
+msgstr "Φόρμα επεξεργασίας"
+
+#: .\authorities\templates\authorities\authority_form.html:10
+msgid "Submit"
+msgstr "Υποβολή"
+
+#: .\authorities\templates\authorities\authority_list.html:4
+msgid "Authority List"
+msgstr "Λίστα υπηρεσιών"
+
+#: .\authorities\templates\authorities\authority_list.html:10
+msgid "View"
+msgstr "Εμφάνιση"
+
+#: .\authorities\templates\authorities\authority_list.html:11
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: .\authorities\templates\authorities\authority_list.html:12
+msgid "Edit users"
+msgstr "Επεξεργασία χρηστών"
+
+#: .\authorities\templates\authorities\authority_list.html:15
+msgid "No authorities"
+msgstr "Δεν υπάρχουν"
+
+#: .\authorities\templates\authorities\authority_list.html:18
+msgid "Create"
+msgstr "Δημιουργία"

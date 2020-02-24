@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class NamedModel(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Όνομα', unique=True )
+    name = models.CharField(max_length=255, verbose_name=_('Name'), unique=True )
     code = models.CharField(max_length=32, blank=True, null=True, help_text=_('Optional field to add an organization-specific code in addition to the name'))
 
     def __str__(self):

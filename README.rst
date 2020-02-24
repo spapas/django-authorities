@@ -49,12 +49,12 @@ to provide a ``content`` and a ``{% page_title %}`` block. Thus your ``base.html
 
 .. code::
 
-<html>
-    <body>
-        <h1>{% block page_title %}{% endblock %}</h1>
-        {% block content %}{% endblock %}
-    </body>
-</html>
+    <html>
+        <body>
+            <h1>{% block page_title %}{% endblock %}</h1>
+            {% block content %}{% endblock %}
+        </body>
+    </html>
 
 
 These views are:
@@ -86,6 +86,10 @@ like this in your template:
         {% endif %}
     {% endif %}
 
+v.0.2.1
+-------
+
+- Add a missing migration
 
 v.0.2.0
 -------

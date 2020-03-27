@@ -65,9 +65,14 @@ These views are:
 - authorities.views.AuthorityDetailView
 - authorities.views.AuthorityEditUsersView
 
+
 The names are self-explanatory; notice that the Create and Update views do not allow you to edit the users of that authority; you must use the ``AuthorityEditUsersView`` for that.
 
-To improve security a bit I'm checking that the user can add an authority in the urls.py before allowing access to these views.
+You can either use these views in your urls.py or just add something like ``path("authorities/", include("authorities.urls")),`` in your urls.py.
+
+To improve security a bit I'm checking that a user has the proper permission for authority in the app's urls.py before allowing access to these views, i.e ``authorities.view_authority``
+for list and view, ``authorities.add_authority`` for add and ``authorities.change_authority`` for edit and edit users.
+
 
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:
@@ -85,6 +90,11 @@ like this in your template:
             </ul>
         {% endif %}
     {% endif %}
+	
+v.0.2.3
+-------
+
+- Improve permissions
 
 v.0.2.2
 -------

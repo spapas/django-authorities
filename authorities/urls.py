@@ -5,9 +5,9 @@ from django.contrib.auth.decorators import permission_required
 
 urlpatterns = [
 
-    path('', permission_required('authorities.add_authority')(AuthorityListView.as_view()), name='authority_list', ),
+    path('', permission_required('authorities.view_authority')(AuthorityListView.as_view()), name='authority_list', ),
     path('create', permission_required('authorities.add_authority')(AuthorityCreateView.as_view()), name='authority_create', ),
-    path('update/<int:pk>/', permission_required('authorities.add_authority')(AuthorityUpdateView.as_view()), name='authority_update', ),
-    path('view/<int:pk>/', permission_required('authorities.add_authority')(AuthorityDetailView.as_view()), name='authority_view', ),
-    path('update_users/<int:pk>/', permission_required('authorities.add_authority')(AuthorityEditUsersView.as_view()), name='authority_update_users', ),
+    path('update/<int:pk>/', permission_required('authorities.change_authority')(AuthorityUpdateView.as_view()), name='authority_update', ),
+    path('view/<int:pk>/', permission_required('authorities.view_authority')(AuthorityDetailView.as_view()), name='authority_view', ),
+    path('update_users/<int:pk>/', permission_required('authorities.change_authority')(AuthorityEditUsersView.as_view()), name='authority_update_users', ),
 ]

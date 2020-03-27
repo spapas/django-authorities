@@ -86,6 +86,12 @@ like this in your template:
         {% endif %}
     {% endif %}
 
+v.0.2.2
+-------
+
+- Fix MANIFEST.in to include locale files
+
+
 v.0.2.1
 -------
 

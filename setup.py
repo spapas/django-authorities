@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='django-authorities',
-    version='0.2.1',
+    version='0.2.2',
     description="An application for managing your organization's authorities (departments, directorates etc)",
     long_description=readme(),
     author='Serafeim Papastefanos',

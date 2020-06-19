@@ -12,6 +12,7 @@ This more or less is a *better* ``auth.Group`` to help you building the hierarch
 * ``category``: You may have departments, teams, directoratates
 * ``active``: Some authorities are de-activated; they should not be deleted though
 * ``parent``: You'll need to have a proper authority hierarchy
+* ``email``: Some authorities have their own email for contact
 
 Also, for me the django ``auth.Group`` entity feels more like an application/system-related concept (vs the HR Authority provided in this add-on). I.e you can have a django auth group of "Administrators" or "Advanced users" or "Moderators" etc; these people may belong to various directorates; not all people in the "IT department" need to be Administrators of the application.
 
@@ -90,7 +91,12 @@ like this in your template:
             </ul>
         {% endif %}
     {% endif %}
-	
+
+v.0.3.0
+-------
+
+- Add optional email field to `Authority`
+
 v.0.2.3
 -------
 

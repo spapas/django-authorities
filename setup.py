@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='django-authorities',
-    version='0.3.0',
+    version='0.3.2',
     description="An application for managing your organization's authorities (departments, directorates etc)",
     long_description=readme(),
     author='Serafeim Papastefanos',
@@ -27,8 +27,10 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
         'Framework :: Django',
         'Framework :: Django :: 2.0',
+        'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',

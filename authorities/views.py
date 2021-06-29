@@ -11,13 +11,13 @@ class AuthorityListView(ListView):
 
 class AuthorityCreateView(CreateView):
     model = Authority
-    fields = ('name', 'kind', 'is_active', 'parent', )
+    fields = ('name', 'kind', 'is_active', 'parent', 'email', )
 
 
 class AuthorityUpdateView(UpdateView):
     model = Authority
     context_object_name = 'authority'
-    fields = ('name', 'kind', 'is_active', 'parent', )
+    fields = ('name', 'kind', 'is_active', 'parent', 'email',  )
 
 
 class AuthorityDetailView(DetailView):

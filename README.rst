@@ -92,6 +92,16 @@ like this in your template:
         {% endif %}
     {% endif %}
 
+v.0.3.2
+-------
+
+- Small fix to work with newer Django versions
+
+v.0.3.1
+-------
+
+- Add email to forms
+
 v.0.3.0
 -------
 

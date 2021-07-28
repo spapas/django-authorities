@@ -92,6 +92,13 @@ like this in your template:
         {% endif %}
     {% endif %}
 
+v.0.3.3
+-------
+
+- Add a default `default_auto_field` to apps.py
+
+
+
 v.0.3.2
 -------
 

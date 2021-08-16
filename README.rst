@@ -99,6 +99,15 @@ The follow options are supported:
 * ``AUTHORITY_STR_FUNCTION``: You can use this option to set a function that will be used instead of the default ``__str__`` function of the ``Authority`` model
 * ``AUTHORITY_KIND_STR_FUNCTION``: You can use this option to set a function that will be used instead of the default ``__str__`` of the ``AuthorityKind``
 
+Both functions will take the object as a parameter. For example define a function named ``authority_str`` in your ``project.core.utils`` module like this:
+
+.. code::
+
+    def authority_str(au):
+        return '{0} {1}'.format(au.name, au.email)
+
+And then in your settings.py add: ``AUTHORITY_STR_FUNCTION = project.core.utils.authority_str``
+
 Changelog
 =========
 

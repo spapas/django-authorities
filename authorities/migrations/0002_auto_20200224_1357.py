@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('authorities', '0001_initial'),
+        ("authorities", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='authority',
-            name='name',
-            field=models.CharField(max_length=255, unique=True, verbose_name='Name'),
+            model_name="authority",
+            name="name",
+            field=models.CharField(max_length=255, unique=True, verbose_name="Name"),
         ),
         migrations.AlterField(
-            model_name='authoritykind',
-            name='name',
-            field=models.CharField(max_length=255, unique=True, verbose_name='Name'),
+            model_name="authoritykind",
+            name="name",
+            field=models.CharField(max_length=255, unique=True, verbose_name="Name"),
         ),
     ]

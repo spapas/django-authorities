@@ -5,11 +5,16 @@ from .models import Authority
 
 
 class AuthorityUsersModelForm(forms.ModelForm):
-    users = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple, queryset=get_user_model().objects.all(), label=_('Select users'), required=False, )
+    users = forms.ModelMultipleChoiceField(
+        widget=forms.CheckboxSelectMultiple,
+        queryset=get_user_model().objects.all(),
+        label=_("Select users"),
+        required=False,
+    )
 
     class Meta:
         model = Authority
-        fields = ('users', )
+        fields = ("users",)
 
     def __init__(self, *args, **kwargs):
         super(AuthorityUsersModelForm, self).__init__(*args, **kwargs)

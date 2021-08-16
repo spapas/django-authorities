@@ -74,7 +74,6 @@ You can either use these views in your urls.py or just add something like ``path
 To improve security a bit I'm checking that a user has the proper permission for authority in the app's urls.py before allowing access to these views, i.e ``authorities.view_authority``
 for list and view, ``authorities.add_authority`` for add and ``authorities.change_authority`` for edit and edit users.
 
-
 To use the provided template tag, you need to ``{% load authorities_tags %}`` and then you can do something
 like this in your template:
 
@@ -91,6 +90,22 @@ like this in your template:
             </ul>
         {% endif %}
     {% endif %}
+
+Configuration
+=============
+
+The follow options are supported:
+
+* ``AUTHORITY_STR_FUNCTION``: You can use this option to set a function that will be used instead of the default ``__str__`` function of the ``Authority`` model
+* ``AUTHORITY_KIND_STR_FUNCTION``: You can use this option to set a function that will be used instead of the default ``__str__`` of the ``AuthorityKind``
+
+Changelog
+=========
+
+v.0.4.0
+-------
+
+Support configurable ``__str__`` methods for ``Authority`` and ``AuthorityKind``
 
 v.0.3.3
 -------

@@ -15,43 +15,102 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Authority',
+            name="Authority",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True, verbose_name='Όνομα')),
-                ('code', models.CharField(blank=True, help_text='Optional field to add an organization-specific code in addition to the name', max_length=32, null=True)),
-                ('is_active', models.BooleanField(default=True, help_text='Unselect this if the authority is not active any more')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=255, unique=True, verbose_name="Όνομα"),
+                ),
+                (
+                    "code",
+                    models.CharField(
+                        blank=True,
+                        help_text="Optional field to add an organization-specific code in addition to the name",
+                        max_length=32,
+                        null=True,
+                    ),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(
+                        default=True,
+                        help_text="Unselect this if the authority is not active any more",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Authority',
-                'verbose_name_plural': 'Authorities',
+                "verbose_name": "Authority",
+                "verbose_name_plural": "Authorities",
             },
         ),
         migrations.CreateModel(
-            name='AuthorityKind',
+            name="AuthorityKind",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True, verbose_name='Όνομα')),
-                ('code', models.CharField(blank=True, help_text='Optional field to add an organization-specific code in addition to the name', max_length=32, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=255, unique=True, verbose_name="Όνομα"),
+                ),
+                (
+                    "code",
+                    models.CharField(
+                        blank=True,
+                        help_text="Optional field to add an organization-specific code in addition to the name",
+                        max_length=32,
+                        null=True,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Authority Kind',
-                'verbose_name_plural': 'Authority Kinds',
+                "verbose_name": "Authority Kind",
+                "verbose_name_plural": "Authority Kinds",
             },
         ),
         migrations.AddField(
-            model_name='authority',
-            name='kind',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='authorities.AuthorityKind', verbose_name='Kind'),
+            model_name="authority",
+            name="kind",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT,
+                to="authorities.AuthorityKind",
+                verbose_name="Kind",
+            ),
         ),
         migrations.AddField(
-            model_name='authority',
-            name='parent',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, to='authorities.Authority', verbose_name='Parent'),
+            model_name="authority",
+            name="parent",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.PROTECT,
+                to="authorities.Authority",
+                verbose_name="Parent",
+            ),
         ),
         migrations.AddField(
-            model_name='authority',
-            name='users',
-            field=models.ManyToManyField(blank=True, related_name='authorities', to=settings.AUTH_USER_MODEL, verbose_name='Authority users'),
+            model_name="authority",
+            name="users",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="authorities",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Authority users",
+            ),
         ),
     ]

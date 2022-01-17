@@ -111,6 +111,11 @@ And then in your settings.py add: ``AUTHORITY_STR_FUNCTION = project.core.utils.
 Changelog
 =========
 
+v.0.4.1
+-------
+
+Make it compatible with Django 4.x
+
 v.0.4.0
 -------
 

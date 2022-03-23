@@ -111,6 +111,11 @@ And then in your settings.py add: ``AUTHORITY_STR_FUNCTION = project.core.utils.
 Changelog
 =========
 
+v.0.4.2
+-------
+
+Make unique per name/kind id
+
 v.0.4.1
 -------
 

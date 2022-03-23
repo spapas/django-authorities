@@ -29,7 +29,7 @@ except:
 
 
 class NamedModel(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name"), unique=True)
+    
     code = models.CharField(
         max_length=32,
         blank=True,
@@ -44,6 +44,7 @@ class NamedModel(models.Model):
 
 
 class AuthorityKind(NamedModel):
+    name = models.CharField(max_length=255, verbose_name=_("Name"), unique=True)
     class Meta:
         verbose_name = _("Authority Kind")
         verbose_name_plural = _("Authority Kinds")
@@ -53,6 +54,7 @@ class AuthorityKind(NamedModel):
 
 
 class Authority(NamedModel):
+    name = models.CharField(max_length=255, verbose_name=_("Name"))
     kind = models.ForeignKey(
         "AuthorityKind",
         verbose_name=_(
@@ -93,6 +95,7 @@ class Authority(NamedModel):
     class Meta:
         verbose_name = _("Authority")
         verbose_name_plural = _("Authorities")
+        unique_together = ("name", "kind")
 
     def __str__(self):
         return authority_str_function(self)
